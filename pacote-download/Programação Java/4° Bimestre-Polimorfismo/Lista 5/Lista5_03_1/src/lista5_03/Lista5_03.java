@@ -10,18 +10,12 @@ import classes.Vaca;
 import java.text.DecimalFormat;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author User
- */
 public class Lista5_03 {
     static int op;
     static Animal novilha = new Novilha();
     static Animal vaca = new Vaca();
     static DecimalFormat df = new DecimalFormat("R$#,###.00");
-    /**
-     * @param args the command line arguments
-     */
+    
     public static void main(String[] args) {
         // TODO code application logic here
         do{
@@ -64,8 +58,8 @@ public class Lista5_03 {
         System.out.println("Valor do Adicional: "+df.format(vaca.adicional()));
         System.out.println("Valor da Venda: "+df.format(vaca.valorVenda()));
         
-        System.out.println("");
+        System.out.println("------------------------------------------------");
         totalVenda = vaca.valorVenda() + novilha.valorVenda();
-        System.out.println("Valor Total da Venda:  "+totalVenda);
+        System.out.println("Valor Total da Venda:  "+df.format(totalVenda));
     }
 }

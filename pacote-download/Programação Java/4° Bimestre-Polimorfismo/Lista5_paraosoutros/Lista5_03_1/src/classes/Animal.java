@@ -13,11 +13,14 @@ public abstract class Animal {
     protected float pesoMedio;
     protected float valorKg;
     
-    public abstract float adicional( );
+    public abstract float adicional();
     public abstract float valorBasico();
+
     public abstract float valorVenda();
+
     public abstract float pesoTotal();
 
+    //get e set
     public int getQuantidade() {
         return quantidade;
     }

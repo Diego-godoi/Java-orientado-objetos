@@ -11,7 +11,7 @@ package classes;
  */
 public class Retangulo extends Calculadora{
     @Override
-    public float Calcular(float x,float y){
-        return(x*y);
+    public float Calcular(){
+        return(this.a*this.b);
     }
 }

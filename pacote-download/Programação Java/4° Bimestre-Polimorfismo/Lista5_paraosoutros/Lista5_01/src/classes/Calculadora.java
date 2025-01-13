@@ -10,9 +10,9 @@ package classes;
  * @author Aluno
  */
 public abstract class Calculadora {
-     private float a,b;
+     protected float a,b;
     
-    public abstract float Calcular(float x,float y);
+    public abstract float Calcular();
 
     public float getA() {
         return a;

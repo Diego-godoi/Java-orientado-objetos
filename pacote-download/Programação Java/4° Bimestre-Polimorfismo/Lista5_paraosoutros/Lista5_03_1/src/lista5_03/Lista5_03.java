@@ -4,8 +4,10 @@
  */
 package lista5_03;
 
+import classes.Animal;
 import classes.Novilha;
 import classes.Vaca;
+import java.text.DecimalFormat;
 import javax.swing.JOptionPane;
 
 /**
@@ -14,8 +16,8 @@ import javax.swing.JOptionPane;
  */
 public class Lista5_03 {
     static int op;
-    static Novilha novilha = new Novilha();
-    static Vaca vaca = new Vaca();
+    static Animal novilha = new Novilha();
+    static Animal vaca = new Vaca();
     /**
      * @param args the command line arguments
      */
@@ -31,35 +33,37 @@ public class Lista5_03 {
     }
     
     static void digitar(){
-        JOptionPane.showMessageDialog(null, "Calcula da venda de animais de uma fazenda");
-        JOptionPane.showMessageDialog(null, "Venda de novilhas");
+        JOptionPane.showMessageDialog(null, "CALCULO DA VENDA DE ANIMAIS");
+        
+        JOptionPane.showMessageDialog(null, "Venda de Novilhas");
         novilha.setQuantidade(Integer.parseInt(JOptionPane.showInputDialog("Digite a quantidade de novilhas: ")));
         novilha.setPesoMedio(Float.parseFloat(JOptionPane.showInputDialog("Peso medio de cada novilha: ")));
         novilha.setValorKg(Float.parseFloat(JOptionPane.showInputDialog("Valor por Kg: ")));
-        JOptionPane.showMessageDialog(null, "Venda de vacas adultas");
+        
+        JOptionPane.showMessageDialog(null, "Venda de Vacas Adultas");
         vaca.setQuantidade(Integer.parseInt(JOptionPane.showInputDialog("Digite a quantidade de vacas adultas: ")));
         vaca.setPesoMedio(Float.parseFloat(JOptionPane.showInputDialog("Peso medio de cada vaca: ")));
         vaca.setValorKg(Float.parseFloat(JOptionPane.showInputDialog("Valor por Kg: ")));
     }
     
     static void listar(){
-        float totalVenda =0;
-        System.out.println("Resumo da venda");
-        System.out.println("Novilhas");
-        System.out.println("Quantidade\t\tPeso Total\t\tValor basico\t\tValor do adicional\t\tValor da venda");
-        System.out.print(novilha.getQuantidade()+"\t\t");
-        System.out.print(novilha.pesoTotal()+"\t\t");
-        System.out.print(novilha.valorBasico()+"\t\t");
-        System.out.print(novilha.adicional()+"\t\t");
-        System.out.println(novilha.valorVenda());
+        float totalVenda = 0;
+        System.out.println("        Resumo da venda");
+        System.out.println("--NOVILHAS");
+        System.out.println("Quantidade: "+novilha.getQuantidade());
+        System.out.println("Peso Total: "+novilha.pesoTotal());
+        System.out.println("Valor Básico: "+novilha.valorBasico());
+        System.out.println("Valor do Adicional: "+novilha.adicional());
+        System.out.println("Valor da Venda: "+novilha.valorVenda());
         
-        System.out.println("Vacas Adultas");
-        System.out.println("Quantidade\t\tPeso Total\t\tValor basico\t\tValor do adicional\t\tValor da venda");
-        System.out.print(vaca.getQuantidade()+"\t\t");
-        System.out.print(vaca.pesoTotal()+"\t\t");
-        System.out.print(vaca.valorBasico()+"\t\t");
-        System.out.print(vaca.adicional()+"\t\t");
-        System.out.println(vaca.valorVenda());
+        System.out.println("");
+        
+        System.out.println("--VACAS ADULTAS");
+        System.out.println("Quantidade: "+vaca.getQuantidade());
+        System.out.println("Peso Total: "+vaca.pesoTotal());
+        System.out.println("Valor Básico: "+vaca.valorBasico());
+        System.out.println("Valor do Adicional: "+vaca.adicional());
+        System.out.println("Valor da Venda: "+vaca.valorVenda());
         
         System.out.println("");
         totalVenda = vaca.valorVenda() + novilha.valorVenda();

@@ -1,13 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package classes;
-
-/**
- *
- * @author User
- */
 public class Novilha extends Animal{
 
     @Override
@@ -20,6 +11,19 @@ public class Novilha extends Animal{
             return (float) (valorBasico()*4.5/100);
     }
 
-    
+    @Override
+    public float valorBasico() {
+        return pesoTotal() * this.valorKg;
+    }
+
+    @Override
+    public float valorVenda() {
+        return valorBasico() + adicional();
+    }
+
+    @Override
+    public float pesoTotal() {
+        return this.pesoMedio * this.quantidade;
+    }
     
 }

@@ -21,7 +21,6 @@ public class Lista5_01 {
     static Retangulo r = new Retangulo();
     static TrianguloRetangulo tr = new TrianguloRetangulo();
     static Circulo c = new Circulo();
-    static float num1,num2;
     /**
      * @param args the command line arguments
      */
@@ -32,29 +31,38 @@ public class Lista5_01 {
             do{
                 op = Integer.parseInt(JOptionPane.showInputDialog("Figuras planas:\n"
                                                 + "1.Retangulo\n"
-                                                + "2.Triangulo Retangulo\n"
-                                                + "3.Circulo"));
-            }while((op<1)||(op>3));
-            if(op!=3){
-                num1 = Float.parseFloat(JOptionPane.showInputDialog("Largura: "));
-                num2 = Float.parseFloat(JOptionPane.showInputDialog("Comprimento: "));
-            }else{
-                num1 = Float.parseFloat(JOptionPane.showInputDialog("Raio: "));
-            }
+                                                + "2.Triangulo Retangulo"
+                                                + "\n3.Circulo"
+                                                + "\n4.Sair"));
+            }while((op<1)||(op>4));
             switch(op){
                 default:
-                    JOptionPane.showMessageDialog(null, "Erro");
+                    JOptionPane.showMessageDialog(null, "Programa Encerrado");
+                    break;
                 case 1:
-                    JOptionPane.showMessageDialog(null, df.format(r.Calcular(num1, num2)));
+                    retangulo();
+                    break;
                 case 2:
-                    JOptionPane.showMessageDialog(null, df.format(tr.Calcular(num1, num2)));
+                    trianguloRetangulo();
+                    break;
                 case 3:
-                    JOptionPane.showMessageDialog(null, df.format(c.Calcular(num1,0)));
+                    circulo();
+                    break;
             }
-            do{
-                op = JOptionPane.showConfirmDialog(null, "Sair? ");
-            }while(op==2);
-        }while(op==1);
+        }while(op!=4);
     }
-    
+    static void retangulo(){
+        r.setA(Float.parseFloat(JOptionPane.showInputDialog("Largura: ")));
+        r.setB(Float.parseFloat(JOptionPane.showInputDialog("Comprimento: ")));
+        JOptionPane.showMessageDialog(null, "Area do retangulo: "+r.Calcular());
+    }
+    static void trianguloRetangulo(){
+        r.setA(Float.parseFloat(JOptionPane.showInputDialog("Base: ")));
+        r.setB(Float.parseFloat(JOptionPane.showInputDialog("Altura: ")));
+        JOptionPane.showMessageDialog(null, "Area do triangulo retangulo: "+r.Calcular());
+    }
+    static void circulo(){
+        r.setA(Float.parseFloat(JOptionPane.showInputDialog("Raio: ")));
+        JOptionPane.showMessageDialog(null, "Area do circulo: "+r.Calcular());
+    }
 }

@@ -30,11 +30,10 @@ public class Lista5_04 {
         JOptionPane.showMessageDialog(null, "Calculo do salario de 10 funcionarios");
         for (int i = 0; i < 10; i++) {
             do{
-                tipo = Integer.parseInt(JOptionPane.showInputDialog("""
-                                                                    Tipo de Funcionarios
-                                                                    1-Horista
-                                                                    2-Diarista
-                                                                    Tipo do"""+ (1+i) +"° funcionario: "));
+                tipo = Integer.parseInt(JOptionPane.showInputDialog("Tipo de Funcionarios"
+                                                                    +"\n 1-Horista"
+                                                                    +"\n 2-Diarista"
+                                                                    +"\nTipo do "+ (1+i) +"° funcionario: "));
             }while(!(tipo==1||tipo==2));
             switch(tipo){
                 case 1:

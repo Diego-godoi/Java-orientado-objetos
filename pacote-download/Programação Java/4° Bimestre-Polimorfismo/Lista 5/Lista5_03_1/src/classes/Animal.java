@@ -1,32 +1,13 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package classes;
-
-/**
- *
- * @author User
- */
-public class Animal {
+public abstract class Animal {
     protected int quantidade;
     protected float pesoMedio;
     protected float valorKg;
     
-    public float adicional( ){
-        return 0;
-    }
-    public float valorBasico() {
-        return pesoTotal() * this.valorKg;
-    }
-
-    public float valorVenda() {
-        return valorBasico() + adicional();
-    }
-
-    public float pesoTotal() {
-        return this.pesoMedio * this.quantidade;
-    }
+    public abstract float adicional();
+    public abstract float valorBasico();
+    public abstract float valorVenda();
+    public abstract float pesoTotal();
 
     public int getQuantidade() {
         return quantidade;

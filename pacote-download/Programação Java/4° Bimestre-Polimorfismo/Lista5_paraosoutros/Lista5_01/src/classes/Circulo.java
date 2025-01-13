@@ -11,7 +11,7 @@ package classes;
  */
 public class Circulo extends Calculadora{
    @Override
-   public float Calcular(float x,float y){
-       return(float) (Math.PI*Math.pow(x, 2));
+   public float Calcular(){
+       return(float) (Math.PI*Math.pow(this.a, 2));
    }
 }
