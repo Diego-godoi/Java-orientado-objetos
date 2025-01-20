@@ -8,7 +8,8 @@ package lista5_01;
 import classes.Circulo;
 import classes.Retangulo;
 import classes.TrianguloRetangulo;
-import java.text.DecimalFormat;
+import java.text.NumberFormat;
+import java.util.Locale;
 import javax.swing.JOptionPane;
 
 /**
@@ -17,7 +18,8 @@ import javax.swing.JOptionPane;
  */
 public class Lista5_01 {
     static int op;
-    static DecimalFormat df = new DecimalFormat("#,##0.00");
+    static Locale localePT = new Locale("pt","BR");
+    static NumberFormat nf = NumberFormat.getInstance(localePT);
     static Retangulo r = new Retangulo();
     static TrianguloRetangulo tr = new TrianguloRetangulo();
     static Circulo c = new Circulo();
@@ -54,15 +56,15 @@ public class Lista5_01 {
     static void retangulo(){
         r.setA(Float.parseFloat(JOptionPane.showInputDialog("Largura: ")));
         r.setB(Float.parseFloat(JOptionPane.showInputDialog("Comprimento: ")));
-        JOptionPane.showMessageDialog(null, "Area do retangulo: "+r.Calcular());
+        JOptionPane.showMessageDialog(null, "Area do retangulo: "+nf.format(r.Calcular()));
     }
     static void trianguloRetangulo(){
         r.setA(Float.parseFloat(JOptionPane.showInputDialog("Base: ")));
         r.setB(Float.parseFloat(JOptionPane.showInputDialog("Altura: ")));
-        JOptionPane.showMessageDialog(null, "Area do triangulo retangulo: "+r.Calcular());
+        JOptionPane.showMessageDialog(null, "Area do triangulo retangulo: "+nf.format(tr.Calcular()));
     }
     static void circulo(){
         r.setA(Float.parseFloat(JOptionPane.showInputDialog("Raio: ")));
-        JOptionPane.showMessageDialog(null, "Area do circulo: "+r.Calcular());
+        JOptionPane.showMessageDialog(null, "Area do circulo: "+nf.format(c.Calcular()));
     }
 }

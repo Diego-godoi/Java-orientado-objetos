@@ -2,15 +2,16 @@ package lista5_04;
 
 import classes.Diaristas;
 import classes.Horistas;
-import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import javax.swing.JOptionPane;
 
 public class Lista5_04 {
     static int op;
-    static DecimalFormat df = new DecimalFormat("R$ #,##0.00");
-    //arrays (vetores) que nao tem um limete definido
+    static NumberFormat df = NumberFormat.getCurrencyInstance(Locale.getDefault());
+    //arrays (vetores) que nao tem um limete definido - Arrays dinamicos
     static List<Horistas> horistas = new ArrayList<>();
     static List<Diaristas> diaristas = new ArrayList<>();
     

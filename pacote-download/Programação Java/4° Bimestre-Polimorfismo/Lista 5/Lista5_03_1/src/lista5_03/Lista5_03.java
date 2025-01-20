@@ -7,14 +7,15 @@ package lista5_03;
 import classes.Animal;
 import classes.Novilha;
 import classes.Vaca;
-import java.text.DecimalFormat;
+import java.text.NumberFormat;
+import java.util.Locale;
 import javax.swing.JOptionPane;
 
 public class Lista5_03 {
     static int op;
     static Animal novilha = new Novilha();
     static Animal vaca = new Vaca();
-    static DecimalFormat df = new DecimalFormat("R$#,###.00");
+    static NumberFormat df= NumberFormat.getCurrencyInstance(Locale.getDefault()); //defino uma formatacao para valores monetarios de acordo com o idioma/localizacao do sistema operacional que esta executando o programa
     
     public static void main(String[] args) {
         // TODO code application logic here

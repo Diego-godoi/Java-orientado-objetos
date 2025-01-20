@@ -2,14 +2,16 @@ package lista5_02;
 
 import classes.Gerente;
 import classes.Vendedor;
-import java.text.DecimalFormat;
+import java.text.NumberFormat;
+import java.util.Locale;
 import javax.swing.JOptionPane;
 
 public class Lista5_02 {
     static int op;
     static Gerente gerente = new Gerente();
     static Vendedor[] vendedor = new Vendedor[5];
-    static DecimalFormat df = new DecimalFormat("R$ #,###.00");
+    static Locale localePT = new Locale("pt","BR");  //usei o locale para definir uma localizacao para o sistema (pr-BR)
+    static NumberFormat nf = NumberFormat.getCurrencyInstance(localePT); //usei um metodo da classe numberformat para fazer a formatacao dos valores monetarios
     
     public static void main(String[] args) {
         // TODO code application logic here
@@ -41,16 +43,16 @@ public class Lista5_02 {
         System.out.println("Nome\t\tValor da venda\t\tValor da comissao\t\tSalario total");
         for(int i = 0; i < vendedor.length; i++) {
             System.out.print(vendedor[i].getNome()+"\t\t");
-            System.out.print(df.format(vendedor[i].getVendaMes())+"\t\t");
-            System.out.print(df.format(vendedor[i].comissao())+"\t\t");
-            System.out.println(df.format(vendedor[i].salarioTotal()));
+            System.out.print(nf.format(vendedor[i].getVendaMes())+"\t\t");
+            System.out.print(nf.format(vendedor[i].comissao())+"\t\t");
+            System.out.println(nf.format(vendedor[i].salarioTotal()));
         }
         
         System.out.println("Relacao do Gerente");
         System.out.println("Nome\t\tSalario\t\tComissao\t\tValor total a receber");
         System.out.print(gerente.getNome()+"\t\t");
-        System.out.print(df.format(gerente.getSalarioFixo())+"\t\t");
-        System.out.print(df.format(gerente.comissao())+"\t\t");
-        System.out.println(df.format(gerente.salarioTotal()));
+        System.out.print(nf.format(gerente.getSalarioFixo())+"\t\t");
+        System.out.print(nf.format(gerente.comissao())+"\t\t");
+        System.out.println(nf.format(gerente.salarioTotal()));
     }
 }
